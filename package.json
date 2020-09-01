@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-blog",
+  "version": "1.0.0",
+  "description": "my vuepress blog",
+  "main": "index.js",
+  "repository": "https://github.com/ClearScenery/vuepress-blog.git",
+  "author": "ClearScenery",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "vuepress": "^1.5.2",
+    "vuepress-theme-reco": "^1.5.5"
+  },
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.4.4",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6"
+  }
+}
