@@ -1,12 +1,16 @@
 module.exports = {
-    title: '景色分明',
-    description: '人生天地间，忽如远行客',
+    title: '喜欢夜晚Coding的耗子',
+    description: '人生如逆旅，我亦是行人',
     theme: 'reco',
     head: [
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
         ['link',{ rel: "shortcut icon", href: '/favicon.ico'}]
     ],
     themeConfig: {
+      valineConfig: {
+        appId: 'e4xv1putYamza36SIG5QPma0-gzGzoHsz',// your appId
+        appKey: 'NzPi8qbGBKVPsk4zvUpTMthp', // your appKey
+      },
         nav: [
             { text: '首页', link: '/' },
             { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
@@ -42,7 +46,7 @@ module.exports = {
         author: 'ClearScenery',
         // 备案
         record: '皖ICP备19003549号-1',
-        recordLink: 'http://www.beian.miit.gov.cn/',
+        recordLink: 'https://beian.miit.gov.cn/',
         // 项目开始时间，只填写年份
         startYear: '2018',
         // 博客配置
@@ -60,16 +64,20 @@ module.exports = {
           lang: 'zh-CN'
         }
     },
-    plugins: {
-      '@vssue/vuepress-plugin-vssue': {
-        // 设置 `platform` 而不是 `api`
-        platform: 'github',
-  
-        // 其他的 Vssue 配置
-        owner: 'ClearScenery',
-        repo: 'vuepress-blog',
-        clientId: '7bc280ca88ff5f07789b',
-        clientSecret: 'ef3fbd9ec67f9dc86b95579695c3c9b925a55b95',
-      },
-    },
+    plugins: [
+      [
+        '@vuepress-reco/vuepress-plugin-bgm-player',
+        { 
+          audios: [
+            // 本地文件示例
+            {
+              name: '蜗牛',
+              artist: '周杰伦',
+              url: '/周杰伦-Fantasy.Plus.mp3',
+              cover: '/Fantasy.Plus.jpg'
+            },
+          ],
+        }
+      ]
+    ]
 }  
